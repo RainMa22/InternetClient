@@ -34,7 +34,7 @@ public class ZipFactory {
             zos.putNextEntry(ZipEntries.get(j));
             FileInputStream fis=new FileInputStream(Files.get(j));
             while ((i=fis.read(tmp))>0){
-                zos.write(tmp);
+                zos.write(tmp,0,i);
                 zos.flush();
             }
             zos.closeEntry();
